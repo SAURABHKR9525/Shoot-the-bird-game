@@ -1,0 +1,25 @@
+import random
+
+def shoot():
+    print("Bang! You shot the bird!")
+
+def missed():
+    print("Missed! The bird flew away.")
+
+def play_game():
+    print("Welcome to Shoot the Bird!")
+    print("A bird is flying...")
+    print("Type 'shoot' to try and hit it.")
+
+    bird_position = random.randint(1, 10)
+    while True:
+        user_input = input("Type 'shoot' to fire: ")
+        if user_input.lower() == 'shoot':
+            shot_position = random.randint(1, 10)
+            if shot_position == bird_position:
+                shoot()
+                break
+            else:
+                missed()
+
+play_game()
